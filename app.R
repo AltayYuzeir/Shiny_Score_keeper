@@ -1,8 +1,7 @@
 library(shiny)
-library(shinyalert)
-library(shinyjs)
+#library(shinyalert)
+#library(shinyjs)
 source(file = "user_manual.R")
-#library(shinyWidgets)
 
 wd = "C:/Users/altay/Altay/Lectures_Biochemustry/Business_Science_R/Score_keeper_app/"
 
@@ -330,7 +329,7 @@ server = function(input, output, session) {
                        value = sum(data$Player_10))
     
     write.csv(data, paste0(wd,"Score.txt"), row.names = F)
-    shinyalert("Success", "You have created new Score record !", type = "success")
+    shinyalert::shinyalert("Success", "You have created new Score record !", type = "success")
     
     shinyjs::hide(id = "newGameConfirmButton")
     shinyjs::hide(id = "newGameCancelButton")
@@ -374,7 +373,7 @@ server = function(input, output, session) {
                        value = sum(data$Player_10))
     
     write.csv(data, paste0(wd,"Score.txt"), row.names = F)
-    shinyalert("Success", "You have saved the Score !", type = "success")
+    shinyalert::shinyalert("Success", "You have saved the Score !", type = "success")
     
   })
   
@@ -403,7 +402,7 @@ server = function(input, output, session) {
   observeEvent(input$undoConfirmButton,{
     data = read.csv(paste0(wd,"Score.txt"))
     if(nrow(data)==1){
-      shinyalert("Alert", "You have no more Scores !", type = "error")
+      shinyalert::shinyalert("Alert", "You have no more Scores !", type = "error")
     } else  {
       data = data[-nrow(data),]
       
@@ -429,7 +428,7 @@ server = function(input, output, session) {
                          value = sum(data$Player_10))
       
       write.csv(data, paste0(wd,"Score.txt"), row.names = F)
-      shinyalert("Success", "Last Score record removed !",type = "success")
+      shinyalert::shinyalert("Success", "Last Score record removed !",type = "success")
     }
     
     shinyjs::hide(id = "undoConfirmButton")
@@ -438,7 +437,7 @@ server = function(input, output, session) {
   
   observeEvent(input$showMax,{
     data = read.csv(paste0(wd,"Score.txt"))
-    if(nrow(data) == 1) shinyalert("Alert", "Score record is Empty!", type = "error")
+    if(nrow(data) == 1) shinyalert::shinyalert("Alert", "Score record is Empty!", type = "error")
     else {
       colsum = colSums(data)
       clean_colsum = unname(colsum)
@@ -450,14 +449,14 @@ server = function(input, output, session) {
       
       indexes = which(renamed_sum == max(renamed_sum,na.rm = T))
       if(max(clean_colsum, na.rm = T) == Inf | max(clean_colsum, na.rm = T) == -Inf)  
-        shinyalert("Alert", "Score record is Empty!", type = "error")
+        shinyalert::shinyalert("Alert", "Score record is Empty!", type = "error")
       else{ 
         if(length(indexes) != 1) {
-          shinyalert(
+          shinyalert::shinyalert(
             "Maximum Points",
             paste(paste0(names(indexes), collapse = ", "),"have Max of", max(clean_colsum, na.rm = T), "points"), 
             type = "success")
-        } else shinyalert(
+        } else shinyalert::shinyalert(
           "Maximum Points",
           paste(paste0(names(indexes)), "has Max of", max(clean_colsum, na.rm = T), "points"),
           type = "success")
@@ -467,7 +466,7 @@ server = function(input, output, session) {
   
   observeEvent(input$showMin,{
     data = read.csv(paste0(wd,"Score.txt"))
-    if(nrow(data) == 1) shinyalert("Alert", "Score record is Empty!", type = "error")
+    if(nrow(data) == 1) shinyalert::shinyalert("Alert", "Score record is Empty!", type = "error")
     else {
       colsum = colSums(data)
       clean_colsum = unname(colsum)
@@ -479,14 +478,14 @@ server = function(input, output, session) {
       
       indexes = which(renamed_sum == min(renamed_sum,na.rm = T))
       if(min(clean_colsum, na.rm = T) == Inf | min(clean_colsum, na.rm = T) == -Inf)  
-        shinyalert("Alert", "Score record is Empty!", type = "error")
+        shinyalert::shinyalert("Alert", "Score record is Empty!", type = "error")
       else {
         if(length(indexes) != 1) {
-          shinyalert(
+          shinyalert::shinyalert(
             "Minimum Points",
             paste(paste0(names(indexes), collapse = ", "),"have Min of", min(clean_colsum, na.rm = T), "points"), 
             type = "success")
-        } else shinyalert(
+        } else shinyalert::shinyalert(
           "Minimum Points",
           paste(paste0(names(indexes)), "has Min of", min(clean_colsum, na.rm = T), "points"),
           type = "success")
