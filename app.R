@@ -3,7 +3,7 @@ library(shiny)
 #library(shinyjs)
 source(file = "user_manual.R")
 
-wd = "C:/Users/altay/Altay/Lectures_Biochemustry/Business_Science_R/Score_keeper_app/"
+path = "C:/Users/Altay/Score_Keeper/"
 
 ui = fluidPage(
   shinyWidgets::setBackgroundColor("#93c2eb"),
@@ -328,7 +328,7 @@ server = function(input, output, session) {
     updateNumericInput(inputId = "total10",
                        value = sum(data$Player_10))
     
-    write.csv(data, paste0(wd,"Score.txt"), row.names = F)
+    write.csv(data, paste0(path,"Score.txt"), row.names = F)
     shinyalert::shinyalert("Success", "You have created new Score record !", type = "success")
     
     shinyjs::hide(id = "newGameConfirmButton")
@@ -336,7 +336,7 @@ server = function(input, output, session) {
   })
   
   observeEvent(input$save,{
-    data = read.csv(paste0(wd,"Score.txt"))
+    data = read.csv(paste0(path,"Score.txt"))
     pl1 = input$score1
     pl2 = input$score2
     pl3 = input$score3
@@ -372,7 +372,7 @@ server = function(input, output, session) {
     updateNumericInput(inputId = "total10",
                        value = sum(data$Player_10))
     
-    write.csv(data, paste0(wd,"Score.txt"), row.names = F)
+    write.csv(data, paste0(path,"Score.txt"), row.names = F)
     shinyalert::shinyalert("Success", "You have saved the Score !", type = "success")
     
   })
@@ -400,7 +400,7 @@ server = function(input, output, session) {
   })
   
   observeEvent(input$undoConfirmButton,{
-    data = read.csv(paste0(wd,"Score.txt"))
+    data = read.csv(paste0(path,"Score.txt"))
     if(nrow(data)==1){
       shinyalert::shinyalert("Alert", "You have no more Scores !", type = "error")
     } else  {
@@ -427,7 +427,7 @@ server = function(input, output, session) {
       updateNumericInput(inputId = "total10",
                          value = sum(data$Player_10))
       
-      write.csv(data, paste0(wd,"Score.txt"), row.names = F)
+      write.csv(data, paste0(path,"Score.txt"), row.names = F)
       shinyalert::shinyalert("Success", "Last Score record removed !",type = "success")
     }
     
@@ -436,7 +436,7 @@ server = function(input, output, session) {
   })
   
   observeEvent(input$showMax,{
-    data = read.csv(paste0(wd,"Score.txt"))
+    data = read.csv(paste0(path,"Score.txt"))
     if(nrow(data) == 1) shinyalert::shinyalert("Alert", "Score record is Empty!", type = "error")
     else {
       colsum = colSums(data)
@@ -465,7 +465,7 @@ server = function(input, output, session) {
   
   
   observeEvent(input$showMin,{
-    data = read.csv(paste0(wd,"Score.txt"))
+    data = read.csv(paste0(path,"Score.txt"))
     if(nrow(data) == 1) shinyalert::shinyalert("Alert", "Score record is Empty!", type = "error")
     else {
       colsum = colSums(data)
