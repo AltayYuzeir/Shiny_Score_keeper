@@ -1,2 +1,10 @@
-# Shiny_Score_keeper
-Developer of YuScore - Score keeper for all your group board, card and other games
+<img src="www/YuScore-logo.png" align="right" width=120 height=139 alt="" />
+
+# YuScore - Score Keeper app
+If you like playing board and crad games woth your friends, YuScore is just the app for you.\
+You will not need to have pen and pencil all the time to keep the r´Running and the Total scores.\
+YuScore can keep track of all Running scores of 1 to 10 players and also displays the Total score too.\
+It can even display which player(s) have the Minimum and Maximum Total scores.\
+The app is perfectly suitable to keep Scores in Uno, Uno-Flip, Scrabble, Sushi-Go, Phase 10, Skip-Bo, Game Factory Gold, Game Factory Kombio.
+
+<img src="user_interface.png" align="center" width=100% height=500 alt="" />
