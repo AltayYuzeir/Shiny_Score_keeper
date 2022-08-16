@@ -10,7 +10,7 @@ The app is perfectly suitable to keep Scores in Uno, Uno-Flip, Scrabble, Sushi-G
 <img src="user_interface.png" align="center" width=100% height=400 alt="" />
 
 # Setup
-Option 1: Hosted locally (Recommended)
+Option 1: Hosted locally (Easiest setup)
 1. Download all provided files.
 2. Download and install the [shinyShortcut](https://cran.r-project.org/web/packages/shinyShortcut/README.html) package and follow the instructions. 
 3. Run the _shinyShortcut_ command. You will get a standalone .VBS executable file which can be executed without R or RStudio being open.
