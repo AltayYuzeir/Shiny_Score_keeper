@@ -31,4 +31,4 @@ Option 2: Hosted online, e.g. shinyapps.io
 7. In most games, player with Maximum (sometimes Minimum) points is winner. Player(s) with Max or Min points are shown by pressing on the Player Max/Min points buttons. 
 
 # Acknowledgements and my thanks
-To [Dean Attali](https://deanattali.com/) for the package _**shinyjs**_ which we have used here. But Mr. Attali is doing so much more and creating amazing tools for us to use in Shiny. Feel free to check him out.
+To [Dean Attali](https://deanattali.com/) for the packages _**shinyjs**_ and _**shinyalert**_ which we have used here. But Mr. Attali is doing so much more and creating amazing tools for us to use in Shiny. Feel free to check him out.
