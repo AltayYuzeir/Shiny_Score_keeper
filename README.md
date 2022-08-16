@@ -1,7 +1,7 @@
 <img src="www/YuScore-logo.png" align="right" width=120 height=139 alt="" />
 
 # YuScore - Score Keeper app
-If you like playing board and crad games woth your friends, YuScore is just the app for you.\
+If you like playing board and card games with your friends, YuScore is just the app for you.\
 You will not need to have pen and pencil all the time to keep the Running and the Total scores.\
 YuScore can keep track of all Running scores of 1 to 10 players and also displays the Total scores too.\
 It can even display which player(s) have the Minimum and Maximum Total scores.\
