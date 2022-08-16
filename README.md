@@ -7,4 +7,4 @@ YuScore can keep track of all Running scores of 1 to 10 players and also display
 It can even display which player(s) have the Minimum and Maximum Total scores.\
 The app is perfectly suitable to keep Scores in Uno, Uno-Flip, Scrabble, Sushi-Go, Phase 10, Skip-Bo, Game Factory Gold, Game Factory Kombio, Qwirkle, Dominoes, Cribbage, Azul and many, many more of your favorite board and card games.
 
-<img src="user_interface.png" align="center" width=100% height=500 alt="" />
+<img src="user_interface.png" align="center" width=100% height=400 alt="" />
