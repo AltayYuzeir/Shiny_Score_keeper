@@ -244,7 +244,7 @@ ui = fluidPage(
 
 
 server = function(input, output, session) {
-  shinytitle::change_window_title(session, title = "Score Keeper app")
+  shinytitle::change_window_title(session, title = "YuScore")
   
   observeEvent(input$userManual,{
     
