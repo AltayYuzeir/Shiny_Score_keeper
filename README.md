@@ -18,7 +18,7 @@ Option 1: Hosted locally (Easiest setup)
 
 Option 2: Hosted online, e.g. shinyapps.io
 1. Download all files and create an account in shinyapps.io and follow their instructions furter.
-2. Here you will need a persistant data storage solution. One possibilty is to host your score in Dropbox with the help of the [rdrop2](https://cran.r-project.org/web/packages/rdrop2/) package. You can create access keys (tokens) which can allow your Shiny app to read and write files from and to your Dropbox folder.
+2. Here you will need a persistent data storage solution. One possibilty is to host your score in Dropbox with the help of the [rdrop2](https://cran.r-project.org/web/packages/rdrop2/) package. You can create access keys (tokens) which can allow your Shiny app to read and write files from and to your Dropbox folder.
 3. You will need to modify the code a bit. You will need the special functions for reading the score file from Dropbox _drop_read_csv_ by providing the score filename and Dropbox access token. Once you have done changes to the score, you create file in the virtual environment with _write.csv_ function and you upload it to Dropbox with _drop_upload_ by providing name and Dropbox token.
 
 # User manual (same as the in-app one)
