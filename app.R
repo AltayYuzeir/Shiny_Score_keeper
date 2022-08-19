@@ -1,10 +1,11 @@
 library(shiny)
 library(readr)
+#library(shinyStorePlus)
 #library(shinyalert)
 #library(shinyjs)
 source(file = "user_manual.R")
 
-path = "C:/Users/Altay/Score_keeper_app/"
+path = "C:/Users/Altay/Score_keeper_app/GitHub"
 
 ui = fluidPage(
   shinyWidgets::setBackgroundColor("#93c2eb"),
@@ -15,6 +16,7 @@ ui = fluidPage(
     
   )
   ))), 
+  shinyStorePlus::initStore(),
   title = shinytitle::use_shiny_title(),
   
   hr(style = "border-top: 1px solid #000000;"),
@@ -193,8 +195,8 @@ ui = fluidPage(
           width = 3,
           div(id = "roundNumber",
               textInput("roundNumber", label = NULL, value = "Current round number: 0", width = "100%")
+          )
         )
-      )
       ),
       tags$style(type="text/css", "#roundNumber {background:#d279a6;color:white;}"),
       
@@ -318,27 +320,40 @@ server = function(input, output, session) {
                        "Player_9", "Player_10")
     
     updateTextInput(inputId = "total1",
-                       value = sum(data$Player_1))
+                    value = sum(data$Player_1))
     updateTextInput(inputId = "total2",
-                       value = sum(data$Player_2))
+                    value = sum(data$Player_2))
     updateTextInput(inputId = "total3",
-                       value = sum(data$Player_3))
+                    value = sum(data$Player_3))
     updateTextInput(inputId = "total4",
-                       value = sum(data$Player_4))
+                    value = sum(data$Player_4))
     updateTextInput(inputId = "total5",
-                       value = sum(data$Player_5))
+                    value = sum(data$Player_5))
     updateTextInput(inputId = "total6",
-                       value = sum(data$Player_6))
+                    value = sum(data$Player_6))
     updateTextInput(inputId = "total7",
-                       value = sum(data$Player_7))
+                    value = sum(data$Player_7))
     updateTextInput(inputId = "total8",
-                       value = sum(data$Player_8))
+                    value = sum(data$Player_8))
     updateTextInput(inputId = "total9",
-                       value = sum(data$Player_9))
+                    value = sum(data$Player_9))
     updateTextInput(inputId = "total10",
-                       value = sum(data$Player_10))
+                    value = sum(data$Player_10))
+    
+    updateTextInput(inputId = "score1",value = "")
+    updateTextInput(inputId = "score2",value = "")
+    updateTextInput(inputId = "score3",value = "")
+    updateTextInput(inputId = "score4",value = "")
+    updateTextInput(inputId = "score5",value = "")
+    updateTextInput(inputId = "score6",value = "")
+    updateTextInput(inputId = "score7",value = "")
+    updateTextInput(inputId = "score8",value = "")
+    updateTextInput(inputId = "score9",value = "")
+    updateTextInput(inputId = "score10",value = "")
+    
+    
     updateTextInput(inputId = "roundNumber",
-                      value = paste0("Current round number: ", nrow(data)))
+                    value = paste0("Current round number: ", nrow(data)))
     
     write.csv(data, paste0(path,"Score.txt"), row.names = F)
     shinyalert::shinyalert("Success", "You have created new Score record !", type = "success")
@@ -364,25 +379,25 @@ server = function(input, output, session) {
     data = rbind(data,record)
     
     updateTextInput(inputId = "total1",
-                       value = sum(data$Player_1))
+                    value = sum(data$Player_1))
     updateTextInput(inputId = "total2",
-                       value = sum(data$Player_2))
+                    value = sum(data$Player_2))
     updateTextInput(inputId = "total3",
-                       value = sum(data$Player_3))
+                    value = sum(data$Player_3))
     updateTextInput(inputId = "total4",
-                       value = sum(data$Player_4))
+                    value = sum(data$Player_4))
     updateTextInput(inputId = "total5",
-                       value = sum(data$Player_5))
+                    value = sum(data$Player_5))
     updateTextInput(inputId = "total6",
-                       value = sum(data$Player_6))
+                    value = sum(data$Player_6))
     updateTextInput(inputId = "total7",
-                       value = sum(data$Player_7))
+                    value = sum(data$Player_7))
     updateTextInput(inputId = "total8",
-                       value = sum(data$Player_8))
+                    value = sum(data$Player_8))
     updateTextInput(inputId = "total9",
-                       value = sum(data$Player_9))
+                    value = sum(data$Player_9))
     updateTextInput(inputId = "total10",
-                       value = sum(data$Player_10))
+                    value = sum(data$Player_10))
     updateTextInput(inputId = "roundNumber",
                     value = paste0("Current round number: ", nrow(data)))
     
@@ -421,25 +436,25 @@ server = function(input, output, session) {
       data = data[-nrow(data),]
       
       updateTextInput(inputId = "total1",
-                         value = sum(data$Player_1))
+                      value = sum(data$Player_1))
       updateTextInput(inputId = "total2",
-                         value = sum(data$Player_2))
+                      value = sum(data$Player_2))
       updateTextInput(inputId = "total3",
-                         value = sum(data$Player_3))
+                      value = sum(data$Player_3))
       updateTextInput(inputId = "total4",
-                         value = sum(data$Player_4))
+                      value = sum(data$Player_4))
       updateTextInput(inputId = "total5",
-                         value = sum(data$Player_5))
+                      value = sum(data$Player_5))
       updateTextInput(inputId = "total6",
-                         value = sum(data$Player_6))
+                      value = sum(data$Player_6))
       updateTextInput(inputId = "total7",
-                         value = sum(data$Player_7))
+                      value = sum(data$Player_7))
       updateTextInput(inputId = "total8",
-                         value = sum(data$Player_8))
+                      value = sum(data$Player_8))
       updateTextInput(inputId = "total9",
-                         value = sum(data$Player_9))
+                      value = sum(data$Player_9))
       updateTextInput(inputId = "total10",
-                         value = sum(data$Player_10))
+                      value = sum(data$Player_10))
       updateTextInput(inputId = "roundNumber",
                       value = paste0("Current round number: ", nrow(data)))
       
@@ -508,6 +523,10 @@ server = function(input, output, session) {
       }}
   })
   
+  shinyStorePlus::setupStorage(
+    appId = "YuScore",
+    inputs = TRUE
+  )
 }
 
 shinyApp(ui = ui, server = server)
