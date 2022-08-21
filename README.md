@@ -32,4 +32,4 @@ Option 2: Hosted online, e.g. shinyapps.io
 
 # Acknowledgements and my thanks
 1. To [Dean Attali](https://deanattali.com/) for the packages _**shinyjs**_ and _**shinyalert**_ which we have used here. But Mr. Attali is doing so much more and creating amazing tools for us to use in Shiny. Feel free to check him out.
-2. To the Creator of [shinyStorePlus](https://github.com/oobianom/shinyStorePlus) for the incredibly useful tool for persistent data storage inside Shiny.
+2. To Dr. Obianom, the creator of [shinyStorePlus](https://github.com/oobianom/shinyStorePlus) for the incredibly useful tool for persistent data storage inside Shiny.
