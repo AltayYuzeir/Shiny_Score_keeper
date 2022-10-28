@@ -24,8 +24,11 @@ ui = fluidPage(
       tags$style(".well {background-color:#a3a3c2;}"),
       img(src = "YuScore-logo.png", height = "100%", width = "50%",
           style="display: block; margin-left: auto; margin-right: auto;"),
-      
       hr(style = "border-top: 1px solid #ffffff;"),
+      div(style="text-align:center; color: #666699", tags$b("Copyright"),icon("copyright"),
+          tags$b("2022-2022"),br(), tags$b("Altay Yuzeir")),
+      hr(style = "border-top: 1px solid #ffffff;"),
+      
       
       fluidRow(
         column( width = 4, 
