@@ -99,7 +99,7 @@ ui = fluidPage(
         column(
           width = 3,
           offset = 0,
-          shinyWidgets::textInputIcon("player3", label = NULL, placeholder = "Fish", value = "", icon = icon("fish"))
+          shinyWidgets::textInputIcon("player3", label = NULL, placeholder = "Fish", value = "", icon = icon("fish-fins"))
         ),
         column(
           width = 2,
@@ -139,7 +139,7 @@ ui = fluidPage(
         ),
         column(
           width = 2,
-          actionButton("showMax", label = "Player Max points", icon = icon("battery-full"),
+          actionButton("showMax", label = "Player Max points", icon = icon("hourglass-start"),
                        style = "background:#e68a00;color:white;")
         )
         
@@ -160,7 +160,7 @@ ui = fluidPage(
         ),
         column(
           width = 2,
-          actionButton("showMin", label = "Player Min points", icon = icon("battery-empty"),
+          actionButton("showMin", label = "Player Min points", icon = icon("hourglass-end"),
                        style = "background:#cccc00;color:white;")
         )
       ),
@@ -403,6 +403,17 @@ server = function(input, output, session) {
                     value = sum(data$Player_10))
     updateTextInput(inputId = "roundNumber",
                     value = paste0("Current round number: ", nrow(data)))
+    
+    updateTextInput(inputId = "score1",value = "")
+    updateTextInput(inputId = "score2",value = "")
+    updateTextInput(inputId = "score3",value = "")
+    updateTextInput(inputId = "score4",value = "")
+    updateTextInput(inputId = "score5",value = "")
+    updateTextInput(inputId = "score6",value = "")
+    updateTextInput(inputId = "score7",value = "")
+    updateTextInput(inputId = "score8",value = "")
+    updateTextInput(inputId = "score9",value = "")
+    updateTextInput(inputId = "score10",value = "")
     
     write.csv(data, paste0(path,"Score.txt"), row.names = F)
     shinyalert::shinyalert("Success", "You have saved the Score !", type = "success")
