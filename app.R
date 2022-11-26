@@ -139,7 +139,7 @@ ui = fluidPage(
         ),
         column(
           width = 2,
-          actionButton("showMax", label = "Player Max points", icon = icon("hourglass-start"),
+          actionButton("showMax", label = "Player Max points", icon = icon("arrow-trend-up"),
                        style = "background:#e68a00;color:white;")
         )
         
@@ -160,7 +160,7 @@ ui = fluidPage(
         ),
         column(
           width = 2,
-          actionButton("showMin", label = "Player Min points", icon = icon("hourglass-end"),
+          actionButton("showMin", label = "Player Min points", icon = icon("arrow-trend-down"),
                        style = "background:#cccc00;color:white;")
         )
       ),
