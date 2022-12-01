@@ -44,7 +44,8 @@ ui = fluidPage(
       uiOutput("hideUserManual"),
       hr(style = "border-top: 1px solid #ffffff;"),
       div(style="text-align:center; color: #666699", tags$b("Copyright"),icon("copyright"),
-          tags$b("2022-2022"),br(), tags$b("Altay Yuzeir")),
+          tags$b("2022-2022"),br(), tags$b("Altay Yuzeir"), br(),tags$b("All rights reserved"),
+          br(),tags$b("Developed with R/Shiny")),
       width = 3),
     mainPanel(
       fluidRow(
